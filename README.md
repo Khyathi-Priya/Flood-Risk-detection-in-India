@@ -1,69 +1,188 @@
-PROJECT OVERVIEW:
+# 🌊 Flood Prediction Using Random Forest Classifier
 
-Floods are among the most severe natural disasters in India, leading to widespread damage to life, property, and the environment. Accurate and early flood risk detection plays a vital role in disaster preparedness and mitigation.
-This project presents a machine learning–based flood risk detection system for India using the Random Forest algorithm. The model analyzes historical hydrological and meteorological data to classify regions based on flood risk levels. Random Forest improves prediction accuracy by combining multiple decision trees, making the system robust and reliable.
+## 📌 Project Overview
 
-OBJECTIVES:
+This project uses a **Random Forest Classifier** to predict the occurrence of floods based on environmental and geographical factors. The model transforms flood probability values into a binary classification problem and predicts whether a flood is likely to occur.
 
-->  To analyze flood-related environmental data relevant to India
-->  To build a flood risk prediction model using Random Forest
-->  To enhance prediction accuracy compared to single-tree models
-->  To evaluate model performance using standard classification metrics
-->  To support early warning and disaster management systems
+The project also performs feature importance analysis to identify the most influential factors contributing to flood prediction.
 
-DATASET:
+---
 
-The dataset includes key flood-influencing parameters such as:
-->  Rainfall intensity
-->  Water level indicators
-->  Soil moisture
-->  Climatic and geographical features
-Data preprocessing techniques such as cleaning, normalization, and feature selection are applied to improve model performance.
+## 🚀 Features
 
-TOOLS & TECHNOLOGIES:
+- Data preprocessing and transformation
+- Binary flood classification using thresholding
+- Random Forest machine learning model
+- Model performance evaluation
+- Confusion matrix generation
+- Classification report analysis
+- Feature importance visualization
+- Top 10 important feature identification
 
-->  Programming Language: Python
-->  Libraries:
-    *  NumPy
-    *  Pandas
-    *  Scikit-learn
-    *  Matplotlib / Seaborn
-->  Environment: VS Code
+---
 
-METHODOLOGY:
+## 📂 Dataset
 
-->  Data Preprocessing
-      *  Handling missing values
-      *  Feature scaling and selection
-->  Model Implementation
-      *  Random Forest Classifier
-      *  Hyperparameter tuning for improved accuracy
-->  Model Evaluation
-      *  Accuracy
-      *  Precision
-      *  Recall
-      *  F1-score
-      *  Confusion Matrix
-->  Result Analysis
-      *  Visualization of predictions
-      *  Performance analysis of the Random Forest model
+The dataset contains various flood-related features and a target column:
 
-FUTURE SCOPE:
+- **FloodProbability** → Probability of flood occurrence
 
-->  Incorporation of real-time weather and rainfall data
-->  Comparison with advanced models like XGBoost, LightGBM, and LSTM
-->  Comparison with advanced models like XGBoost, LightGBM, and LSTM
-->  Deployment as a web-based application
+### Target Transformation
 
-CONTRIBUTORS:
+The project converts flood probability into a binary target:
 
-Khyathipriya Kamireddi
-CSE (AI & ML)
+| Flood Probability | Flood Occurred |
+|------------------|---------------|
+| < 0.5 | 0 (No Flood) |
+| ≥ 0.5 | 1 (Flood) |
 
-LICENSE:
+---
 
-This project is intended for academic, educational, and research purposes.
+## 🛠️ Technologies Used
 
-REFERENCES
-Dataset:
-https://www.kaggle.com/datasets/s3programmer/flood-risk-in-india.
+- Python
+- Pandas
+- Scikit-learn
+- Matplotlib
+- Seaborn
+
+---
+
+## 📋 Project Workflow
+
+### 1. Data Loading
+Load the flood dataset using Pandas.
+
+### 2. Data Transformation
+Convert the continuous flood probability values into binary classes.
+
+### 3. Train-Test Split
+Split the dataset into:
+- 80% Training Data
+- 20% Testing Data
+
+### 4. Model Training
+Train a Random Forest Classifier with:
+- 100 Decision Trees
+- Balanced Class Weights
+- Random State = 42
+
+### 5. Prediction
+Predict flood occurrence on the test dataset.
+
+### 6. Performance Evaluation
+Evaluate the model using:
+- Accuracy Score
+- Confusion Matrix
+- Precision
+- Recall
+- F1 Score
+- Classification Report
+
+### 7. Feature Importance Analysis
+Identify and visualize the top 10 most important features influencing flood prediction.
+
+---
+
+## 📊 Evaluation Metrics
+
+The model performance is measured using:
+
+- Accuracy
+- Precision
+- Recall
+- F1-Score
+- Confusion Matrix
+
+---
+
+## 📈 Feature Importance Visualization
+
+The project generates a bar chart showing the top 10 most important features contributing to flood prediction.
+
+---
+
+## 📁 Project Structure
+
+```bash
+Flood-Prediction/
+│
+├── datasetFlood.csv
+├── code2.py
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## ▶️ Installation
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/Khyathi-priya/code2.git
+cd code2.py
+```
+
+### Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Run the Project
+
+```bash
+python code2.py
+```
+
+---
+
+## 📷 Sample Output
+
+```text
+==================================================
+--- RANDOM FOREST CLASSIFIER PERFORMANCE ---
+==================================================
+
+Accuracy: 0.95
+
+Confusion Matrix:
+[[... ...]
+ [... ...]]
+
+Classification Report:
+precision    recall    f1-score
+...
+```
+
+---
+
+## 🎯 Applications
+
+- Disaster Management
+- Early Flood Warning Systems
+- Environmental Monitoring
+- Risk Assessment
+- Smart City Planning
+
+---
+
+## 🔮 Future Enhancements
+
+- Compare multiple machine learning algorithms
+- Hyperparameter tuning
+- Real-time flood prediction system
+- Web application deployment using Streamlit
+- Integration with weather APIs
+
+---
+
+## 👩‍💻 Author
+
+**Khyathi Priya Kamireddi**
+
+Computer Science Engineering (AI & ML)
+
+---
+⭐ If you found this project useful, consider giving it a star!
